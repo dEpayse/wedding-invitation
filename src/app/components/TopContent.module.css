@@ -1,0 +1,25 @@
+.topContent {
+  background-color: white;
+  padding: 0 0 40px;
+  text-align: center;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: auto;
+  line-height: 0; /* 이미지 하단 여백 제거 */
+}
+
+.title {
+  font-size: 32px;
+  margin: 24px 0 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: #555;
+}
