@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Container from "./components/Container";
 import TopContent from "./components/TopContent";
+import MainMessage from "./components/MainMessage";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main className={styles.main}>
         <Container>
           <TopContent />
+          <MainMessage />
         </Container>
 
         <div className={styles.ctas}>
