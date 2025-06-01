@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import styles from './TopContent.module.css';
+import Image from "next/image";
+import styles from "./TopContent.module.css";
 
 export default function TopContent() {
   return (
@@ -13,10 +13,12 @@ export default function TopContent() {
           height={300}
           priority
         />
+        <div className={styles.textOverlay}>
+          <h1 className={styles.title}>BEOMSOON & SEUNGJU</h1>
+          <p className={styles.subtitle}>2026년 2월 7일 토요일 오후 4시</p>
+          <p className={styles.subtitle}>L65호텔웨딩컨벤션</p>
+        </div>
       </div>
-      <h1 className={styles.title}>BEOMSOON & SEUNGJU</h1>
-      <p className={styles.subtitle}>2025년 7월 5일 토요일 오후 12시</p>
-      <p className={styles.subtitle}>더 플라자 지스텀하우스 (22층)</p>
     </div>
   );
 }
