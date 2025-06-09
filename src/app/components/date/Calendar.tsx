@@ -1,4 +1,4 @@
-import VerticalSpacer from "./common/VerticalSpacer";
+import VerticalSpacer from "../common/VerticalSpacer";
 import styles from "./Calendar.module.css";
 
 export function Calendar() {
