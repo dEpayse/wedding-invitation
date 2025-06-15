@@ -1,3 +1,5 @@
+@import './styles/colors.css';
+
 :root {
   --background: #AFC18B;
   --foreground: #171717;

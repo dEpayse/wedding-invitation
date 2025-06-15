@@ -1,0 +1,10 @@
+:root {
+    --color-primary: #020817;
+    --color-secondary: #999999;
+    --color-highlight: #ff6b6b;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+
+    /* Shadows */
+    --shadow-sm: 0px 4px 6px -1px var(--color-shadow);
+    --shadow-md: 0px 10px 15px -3px var(--color-shadow);
+}
