@@ -6,3 +6,6 @@ export const brideLastName: string = "류";
 
 export const groomFullName: string = `${groomLastName}${groomFirstName}`
 export const brideFullName: string = `${brideLastName}${brideFirstName}`
+
+export const groomFirstNameEn: string = "BEOMSOON"
+export const brideFirstNameEn: string = "SEUNGJU"
