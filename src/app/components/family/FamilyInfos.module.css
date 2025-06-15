@@ -1,0 +1,23 @@
+.container {
+    background-color: #F3F5F0;
+    opacity: 0.9;
+}
+
+.familyRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 72px;
+}
+
+.text {
+    color: #111111;
+}
+
+.divider {
+    height: 1px;
+    margin: 0 40px;
+    background-color: #697453;
+    opacity: 0.2;
+}

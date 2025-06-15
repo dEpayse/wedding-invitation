@@ -7,6 +7,7 @@ import LoopVideo from "./components/common/PingpongVideo";
 import ViewPortDate from "./components/ViewPortDate";
 import { Calendar } from "./components/date/Calendar";
 import { Dday } from "./components/date/Dday";
+import {FamilyInfos} from "@/app/components/family/FamilyInfos";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
           <ViewPortDate />
           <Calendar />
           <Dday />
+          <FamilyInfos />
         </Container>
 
         <div className={styles.ctas}>
