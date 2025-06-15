@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./MainMessage.module.css";
 import VerticalSpacer from "./common/VerticalSpacer";
+import {brideFullName, groomFullName} from "@/app/constants/name";
 
 export default function MainMessage() {
   return (
@@ -20,7 +21,7 @@ export default function MainMessage() {
         귀한 발걸음으로 축복해 주시면 감사하겠습니다.
       </h6>
       <VerticalSpacer size={48} />
-      <h6 className={styles.contents}>신랑 최범순 · 신부 류승주</h6>
+      <h6 className={styles.contents}>신랑 {groomFullName} · 신부 {brideFullName}</h6>
       <VerticalSpacer size={45} />
     </div>
   );
