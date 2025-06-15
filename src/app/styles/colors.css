@@ -1,7 +1,7 @@
 :root {
     --color-primary: #020817;
     --color-secondary: #999999;
-    --color-highlight: #ff6b6b;
+    --color-gray-background: #f8f8f8;
     --color-shadow: rgba(0, 0, 0, 0.1);
 
     /* Shadows */

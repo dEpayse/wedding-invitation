@@ -1,3 +1,7 @@
+.background {
+    background-color: var(--color-gray-background);
+}
+
 .roundedContainer {
     background-color: white;
     border-radius: 8px;

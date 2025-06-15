@@ -1,0 +1,1 @@
+export const WEDDING_DATE = "2026-02-07T16:00:00"
