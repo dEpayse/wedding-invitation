@@ -3,7 +3,6 @@
 import styles from "./Dday.module.css";
 import {brideFirstName, groomFirstName} from "@/app/constants/name";
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
-import Image from "next/image";
 
 export function Dday() {
     return (
@@ -45,12 +44,11 @@ function RemainGuide({count, unit}: RemainGuideProps) {
     return (
         <div className={styles.remainGuide}>
             <span>{groomFirstName}</span>
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
                 src="/ic_heart.svg"
                 alt="하트"
-                width={0}
-                height={0}
-                className={styles.originalSize}
+                className={styles.heartImage}
             />
             <span>{brideFirstName}</span>
             <span> 결혼식이</span>
