@@ -7,6 +7,8 @@ import {
     groomMotherFullName
 } from "@/app/constants/name";
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
+import Button from "@/app/components/button/Button";
+import Image from "next/image";
 
 export function FamilyInfos() {
     return (
@@ -28,6 +30,17 @@ export function FamilyInfos() {
                 groomOrBrideStr={`신부`}
                 groomOrBrideFirstName={brideFirstName}/>
             <VerticalSpacer size={48}/>
+            <Button className={styles.congratulations}>
+                <div className={styles.congratulationsDiv}>
+                    <span>축하 연락하기</span>
+                    <Image
+                        width={25}
+                        height={25}
+                        src="/ic_arrow_right.svg"
+                        alt="화살표"/>
+                </div>
+            </Button>
+            <VerticalSpacer size={80}/>
         </div>
     )
 }

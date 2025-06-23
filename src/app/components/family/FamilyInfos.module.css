@@ -21,3 +21,18 @@
     background-color: #697453;
     opacity: 0.2;
 }
+
+:global(.button).congratulations {
+    background-color: #AFC18B;
+    border-radius: 8px;
+    font-size: 13px;
+    width: calc(100% - 72px);
+    margin: 0 36px;
+}
+
+.congratulationsDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
