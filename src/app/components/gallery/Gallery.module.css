@@ -1,0 +1,17 @@
+.galleryTitle {
+    font-size: 33px;
+    color: #111111;
+    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.galleryGuide {
+    font-size: 14px;
+    color: #111111;
+    opacity: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}

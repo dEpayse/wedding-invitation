@@ -8,6 +8,7 @@ import ViewPortDate from "./components/ViewPortDate";
 import { Calendar } from "./components/date/Calendar";
 import { Dday } from "./components/date/Dday";
 import {FamilyInfos} from "@/app/components/family/FamilyInfos";
+import Gallery from "@/app/components/gallery/Gallery";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
           <Calendar />
           <Dday />
           <FamilyInfos />
+          <Gallery />
         </Container>
 
         <div className={styles.ctas}>
