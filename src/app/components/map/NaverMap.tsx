@@ -39,7 +39,6 @@ export default function NaverMap({
     const mapOptions: MapOptions = {
       center: new window.naver.maps.LatLng(center.lat, center.lng),
       zoom: zoom,
-      minZoom: 10,
       zoomControl: showControls,
       zoomControlOptions: showControls ? {
         position: window.naver.maps.Position.TOP_RIGHT,
@@ -71,6 +70,7 @@ export default function NaverMap({
               font-weight: bold;
               box-shadow: 0 2px 6px rgba(0,0,0,0.3);
               border: 2px solid white;
+      transform: translate(-50%, -86%);
               position: relative;
             ">
               ${markerInfo?.title || '📍 위치'}
@@ -86,8 +86,7 @@ export default function NaverMap({
                 border-top: 8px solid #ff4444;
               "></div>
             </div>
-          `,
-          anchor: new window.naver.maps.Point(0, 0)
+          `
         }
       });
 

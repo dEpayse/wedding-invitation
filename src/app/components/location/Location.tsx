@@ -12,16 +12,13 @@ export default function Location() {
             <VerticalSpacer size={80}/>
             <p className={styles.locationTitle}>Location</p>
             <div className={styles.mapContainer}>
-                <NaverMap 
+                <NaverMap
                     center={WEDDING_LOCATION}
                     zoom={MAP_CONFIG.zoom}
                     width="100%"
                     height="400px"
                     markerInfo={WEDDING_VENUE_INFO}
                     showControls={MAP_CONFIG.showControls}
-                    onMapLoad={() => {
-                        console.log('🎉 지도 로드 완료! Location.tsx에서 확인');
-                    }}
                 />
             </div>
         </div>
