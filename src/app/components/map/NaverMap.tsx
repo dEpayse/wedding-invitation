@@ -22,14 +22,14 @@ export default function NaverMap({
   width = "100%", 
   height = "400px", 
   zoom = 15,
-  center = { lat: 37.5665, lng: 126.9780 } // 서울 시청 기본값
+  center = { lat: 37.5800045, lng: 127.0462246 } // 서울 시청 기본값
 }: NaverMapProps) {
   const mapElement = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // 네이버 지도 API 스크립트 동적 로드
     const script = document.createElement('script');
-    script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID`;
+    script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=0qse53sk6j`;
     script.async = true;
     
     script.onload = () => {

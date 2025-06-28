@@ -8,15 +8,16 @@ export default function Location() {
     const mapRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // 네이버 지도 API가 로드되었는지 확인
         if (!mapRef.current || !window.naver) {
-            console.error('네이버 지도 API가 로드되지 않았습니다.');
             return;
         }
 
         // 지도 옵션 설정 (웨딩홀 위치로 설정하세요)
+        const weddingLat = 37.5800045;
+        const weddingLng = 127.0462246;
+        
         const mapOptions: naver.maps.MapOptions = {
-            center: new naver.maps.LatLng(37.5665, 126.9780), // 서울 시청 좌표 (웨딩홀 좌표로 변경)
+            center: new naver.maps.LatLng(weddingLat, weddingLng),
             zoom: 16,
             minZoom: 10,
             zoomControl: true,
@@ -36,7 +37,7 @@ export default function Location() {
 
         // 마커 추가
         const marker = new naver.maps.Marker({
-            position: new naver.maps.LatLng(37.5665, 126.9780), // 웨딩홀 좌표
+            position: new naver.maps.LatLng(weddingLat, weddingLng), // 같은 좌표 사용
             map: map,
             title: '웨딩홀 위치',
         });
@@ -45,9 +46,9 @@ export default function Location() {
         const infoWindow = new naver.maps.InfoWindow({
             content: `
                 <div style="padding: 10px; font-size: 14px;">
-                    <strong>웨딩홀 이름</strong><br/>
-                    주소: 서울특별시 중구 태평로 1가<br/>
-                    <a href="https://map.naver.com/v5/search/웨딩홀" target="_blank">길찾기</a>
+                    <strong>강남역 테스트</strong><br/>
+                    주소: 서울특별시 강남구 강남대로<br/>
+                    <a href="https://map.naver.com/v5/search/강남역" target="_blank">길찾기</a>
                 </div>
             `,
         });
