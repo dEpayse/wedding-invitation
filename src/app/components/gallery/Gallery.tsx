@@ -6,12 +6,18 @@ import styles from './Gallery.module.css';
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 // 🎯 커스텀 다음 버튼
 function CustomNextArrow({ onClick }: { onClick?: () => void }) {
     return (
         <button className={styles.customNextArrow} onClick={onClick}>
-            <span>→</span>
+            <Image
+                src="/ic_gallery_arrow_right.svg"
+                alt="다음 사진 보기"
+                width={24}
+                height={24}
+            />
         </button>
     );
 }
@@ -20,7 +26,12 @@ function CustomNextArrow({ onClick }: { onClick?: () => void }) {
 function CustomPrevArrow({ onClick }: { onClick?: () => void }) {
     return (
         <button className={styles.customPrevArrow} onClick={onClick}>
-            <span>←</span>
+            <Image
+                src="/ic_gallery_arrow_left.svg"
+                alt="다음 사진 보기"
+                width={24}
+                height={24}
+            />
         </button>
     );
 }
