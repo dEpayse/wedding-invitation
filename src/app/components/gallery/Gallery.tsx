@@ -37,11 +37,12 @@ function CustomDots({ dots }: { dots?: React.ReactNode }) {
 export default function Gallery() {
     // 테스트용 이미지 데이터 (나중에 실제 이미지로 교체)
     const galleryImages = [
-        { src: 'https://via.placeholder.com/400x300/ff6b6b/ffffff?text=Image+1', alt: '갤러리 이미지 1' },
-        { src: 'https://via.placeholder.com/400x300/4ecdc4/ffffff?text=Image+2', alt: '갤러리 이미지 2' },
-        { src: 'https://via.placeholder.com/400x300/45b7d1/ffffff?text=Image+3', alt: '갤러리 이미지 3' },
-        { src: 'https://via.placeholder.com/400x300/96ceb4/ffffff?text=Image+4', alt: '갤러리 이미지 4' },
-        { src: 'https://via.placeholder.com/400x300/ffeaa7/000000?text=Image+5', alt: '갤러리 이미지 5' },
+        { src: '/gallery/gallery_01.jpg', alt: '갤러리 이미지 1' },
+        { src: '/gallery/gallery_02.jpg', alt: '갤러리 이미지 2' },
+        { src: '/gallery/gallery_03.jpg', alt: '갤러리 이미지 3' },
+        { src: '/gallery/gallery_04.jpg', alt: '갤러리 이미지 4' },
+        { src: '/gallery/gallery_05.jpg', alt: '갤러리 이미지 5' },
+        { src: '/gallery/gallery_06.jpg', alt: '갤러리 이미지 6' },
     ];
 
     const settings = {
