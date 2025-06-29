@@ -8,34 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 
-// 🎯 커스텀 다음 버튼
-function CustomNextArrow({ onClick }: { onClick?: () => void }) {
-    return (
-        <button className={styles.customNextArrow} onClick={onClick}>
-            <Image
-                src="/ic_gallery_arrow_right.svg"
-                alt="다음 사진 보기"
-                width={24}
-                height={24}
-            />
-        </button>
-    );
-}
-
-// 🎯 커스텀 이전 버튼  
-function CustomPrevArrow({ onClick }: { onClick?: () => void }) {
-    return (
-        <button className={styles.customPrevArrow} onClick={onClick}>
-            <Image
-                src="/ic_gallery_arrow_left.svg"
-                alt="다음 사진 보기"
-                width={24}
-                height={24}
-            />
-        </button>
-    );
-}
-
 // 🎯 커스텀 인디케이터
 function CustomDots({ dots }: { dots?: React.ReactNode }) {
     return (
@@ -63,12 +35,12 @@ export default function Gallery() {
         slidesToShow: 1,               // 한 번에 보여줄 슬라이드 수
         slidesToScroll: 1,             // 한 번에 스크롤할 슬라이드 수
         autoplay: false,               // 자동재생 비활성화
-        
+
         // 🎨 커스텀 인디케이터
         appendDots: (dots: React.ReactNode) => <CustomDots dots={dots} />,
         customPaging: (i: number) => (
             <button className={styles.customDot}>
-                <span className={styles.dotNumber}>{i + 1}</span>
+                {/* 숫자 제거하고 심플한 닷으로 */}
             </button>
         ),
         

@@ -92,56 +92,41 @@
 /* 🎯 커스텀 인디케이터 */
 .customDots {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .customDots ul {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .customDot {
-    width: 40px;
-    height: 40px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    border: 2px solid #ddd;
-    background: white;
+    border: none;
+    background: #ddd;
     cursor: pointer;
     transition: all 0.3s ease;
     
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    font-size: 14px;
-    font-weight: 600;
-    color: #666;
-    
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.dotNumber {
-    font-size: 12px;
-    font-weight: 600;
 }
 
 .customDot:hover {
-    border-color: #bbb;
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #bbb;
+    transform: scale(1.05);
 }
 
 /* 활성화된 인디케이터 */
 :global(.slick-active) .customDot {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-color: #667eea;
-    color: white;
-    transform: scale(1.2);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    background: #8c9a6f;  /* 프로젝트 포인트 컬러 */
+    transform: scale(1.2);  /* 아주 살짝 크게 */
 }
 
 /* 슬라이더 내부 기본 스타일 오버라이드 */
