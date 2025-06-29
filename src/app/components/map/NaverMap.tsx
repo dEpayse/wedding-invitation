@@ -55,62 +55,43 @@ export default function NaverMap({
     const map = new window.naver.maps.Map(mapElement.current, mapOptions);
 
     setTimeout(() => {
-      const marker = new window.naver.maps.Marker({
+      new window.naver.maps.Marker({
         position: new window.naver.maps.LatLng(center.lat, center.lng),
         map: map,
         title: markerInfo?.title || '위치',
         icon: {
           content: `
             <div style="
-              background: #ff4444;
+              background: #8c9a6f;
               color: white;
-              padding: 8px 12px;
-              border-radius: 20px;
-              font-size: 12px;
-              font-weight: bold;
-              box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-              border: 2px solid white;
-      transform: translate(-50%, -86%);
+              padding: 10px 10px;
+              border-radius: 8px;
+              font-size: 14px;
+              font-weight: 500;
+              box-shadow: 0 10px 15px -3px rgba(140, 154, 111, 0.4);
+              border: none;
+              transform: translate(-50%, -86%);
               position: relative;
+              white-space: nowrap;
+              font-family: Arial, Helvetica, sans-serif;
+              backdrop-filter: blur(8px);
             ">
               ${markerInfo?.title || '📍 위치'}
               <div style="
                 position: absolute;
-                bottom: -8px;
+                bottom: -6px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 0;
                 height: 0;
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-top: 8px solid #ff4444;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid #8c9a6f;
               "></div>
             </div>
           `
         }
       });
-
-      // 정보창 추가 (markerInfo가 있을 때만)
-      if (markerInfo) {
-        const infoWindow = new window.naver.maps.InfoWindow({
-          content: `
-            <div style="padding: 10px; font-size: 14px;">
-              <strong>${markerInfo.title}</strong><br/>
-              주소: ${markerInfo.address}<br/>
-              ${markerInfo.linkUrl ? `<a href="${markerInfo.linkUrl}" target="_blank">${markerInfo.linkText || '길찾기'}</a>` : ''}
-            </div>
-          `,
-        });
-
-        // 마커 클릭시 정보창 열기/닫기
-        window.naver.maps.Event.addListener(marker, 'click', () => {
-          if (infoWindow.getMap()) {
-            infoWindow.close();
-          } else {
-            infoWindow.open(map, marker);
-          }
-        });
-      }
     }, 500); // 0.5초 후 마커 추가
 
     // 컴포넌트 언마운트시 정리
