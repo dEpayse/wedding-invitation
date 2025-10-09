@@ -47,46 +47,18 @@
     transform: scale(1.02);
 }
 
-/* 🎯 커스텀 다음/이전 버튼 */
+/* 🎯 커스텀 다음/이전 버튼 - 완전히 숨김 */
 .customNextArrow, .customPrevArrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    font-size: 20px;
-    cursor: pointer;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    display: none !important;
 }
 
-.customNextArrow {
-    right: -25px;
+/* 모든 슬라이더 화살표 강제로 숨기기 */
+:global(.slick-arrow) {
+    display: none !important;
 }
 
-.customPrevArrow {
-    left: -25px;
-}
-
-.customNextArrow:hover, .customPrevArrow:hover {
-    background: rgba(255, 255, 255, 1);
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
-}
-
-.customNextArrow:active, .customPrevArrow:active {
-    transform: translateY(-50%) scale(0.95);
+:global(.slick-prev), :global(.slick-next) {
+    display: none !important;
 }
 
 /* 🎯 커스텀 인디케이터 */

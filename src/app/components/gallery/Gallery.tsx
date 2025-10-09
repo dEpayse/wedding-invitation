@@ -35,6 +35,7 @@ export default function Gallery() {
         slidesToShow: 1,               // 한 번에 보여줄 슬라이드 수
         slidesToScroll: 1,             // 한 번에 스크롤할 슬라이드 수
         autoplay: false,               // 자동재생 비활성화
+        arrows: false,                 // 기본적으로 화살표 숨김 (웹용)
 
         // 🎨 커스텀 인디케이터
         appendDots: (dots: React.ReactNode) => <CustomDots dots={dots} />,
@@ -43,17 +44,6 @@ export default function Gallery() {
                 {/* 숫자 제거하고 심플한 닷으로 */}
             </button>
         ),
-        
-        // 📱 반응형 설정
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
     };
 
     return (
