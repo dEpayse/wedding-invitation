@@ -6,7 +6,6 @@ import styles from './Gallery.module.css';
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
 
 // 🎯 커스텀 인디케이터
 function CustomDots({ dots }: { dots?: React.ReactNode }) {
@@ -39,7 +38,7 @@ export default function Gallery() {
 
         // 🎨 커스텀 인디케이터
         appendDots: (dots: React.ReactNode) => <CustomDots dots={dots} />,
-        customPaging: (i: number) => (
+        customPaging: () => (
             <button className={styles.customDot}>
                 {/* 숫자 제거하고 심플한 닷으로 */}
             </button>
@@ -60,8 +59,9 @@ export default function Gallery() {
                     {galleryImages.map((image, index) => (
                         <div key={index} className={styles.slide}>
                             <div className={styles.imageWrapper}>
-                                <img 
-                                    src={image.src} 
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={image.src}
                                     alt={image.alt}
                                     className={styles.galleryImage}
                                     onClick={() => console.log(`이미지 ${index + 1} 클릭됨`)}

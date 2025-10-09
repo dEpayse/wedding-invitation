@@ -53,11 +53,12 @@
 }
 
 /* 모든 슬라이더 화살표 강제로 숨기기 */
-:global(.slick-arrow) {
+.carouselContainer :global(.slick-arrow) {
     display: none !important;
 }
 
-:global(.slick-prev), :global(.slick-next) {
+.carouselContainer :global(.slick-prev),
+.carouselContainer :global(.slick-next) {
     display: none !important;
 }
 
@@ -102,22 +103,17 @@
 }
 
 /* 슬라이더 내부 기본 스타일 오버라이드 */
-:global(.slick-list) {
+.carouselContainer :global(.slick-list) {
     border-radius: 12px;
     overflow: hidden;
 }
 
-:global(.slick-track) {
+.carouselContainer :global(.slick-track) {
     display: flex;
     align-items: center;
 }
 
-/* 기본 화살표 숨기기 */
-:global(.slick-arrow) {
-    display: block !important;
-}
-
 /* 기본 인디케이터 스타일 오버라이드 */
-:global(.slick-dots li) {
+.carouselContainer :global(.slick-dots li) {
     margin: 0;
 }
