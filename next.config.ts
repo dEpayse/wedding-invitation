@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  basePath: '/wedding-invitation',
+  assetPrefix: '/wedding-invitation',
 };
 
 export default nextConfig;
