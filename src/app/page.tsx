@@ -8,6 +8,7 @@ import { Dday } from "./components/date/Dday";
 import { FamilyInfos } from "@/app/components/family/FamilyInfos";
 import Gallery from "@/app/components/gallery/Gallery";
 import Location from "@/app/components/location/Location";
+import Rsvp from "@/app/components/rsvp/Rsvp";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
           <Dday />
           <Gallery />
           <Location />
+          <Rsvp />
         </Container>
 
         <div className={styles.ctas}>
