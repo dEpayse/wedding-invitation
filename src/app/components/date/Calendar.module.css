@@ -4,7 +4,8 @@
 }
 
 .calendarTitle {
-  font-size: 30px;
+  font-family: var(--font-la-paloma);
+  font-size: 32px;
   color: #111111;
 }
 
@@ -35,6 +36,7 @@
 .weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  margin: 20px 0;
 }
 
 .weekday {
@@ -80,7 +82,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #8c9a6f;
+  background: #111111;
   font-weight: bold;
   color: #ffffff;
   justify-self: center;
