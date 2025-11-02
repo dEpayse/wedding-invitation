@@ -3,7 +3,6 @@ import styles from "./page.module.css";
 import Container from "./components/Container";
 import TopContent from "./components/TopContent";
 import MainMessage from "./components/MainMessage";
-import LoopVideo from "./components/common/PingpongVideo";
 import ViewPortDate from "./components/ViewPortDate";
 import { Calendar } from "./components/date/Calendar";
 import { Dday } from "./components/date/Dday";
@@ -18,14 +17,6 @@ export default function Home() {
         <Container>
           <TopContent />
           <MainMessage />
-          <LoopVideo
-            src="/videos/video_spiez.mp4"
-            muted={true}
-            controls={false}
-            autoPlay={true}
-            width="100%"
-            height="auto"
-          />
           <ViewPortDate />
           <Calendar />
           <Dday />
