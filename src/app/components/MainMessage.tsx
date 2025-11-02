@@ -1,28 +1,34 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./MainMessage.module.css";
 import VerticalSpacer from "./common/VerticalSpacer";
-import {brideFullName, groomFullName} from "@/app/constants/name";
 
 export default function MainMessage() {
   return (
     <div className={styles.mainMessage}>
-      <div className={styles.verticalDivider}></div>
+      <VerticalSpacer size={188} />
+      <Image src="/main_message_ribbon.svg" alt="리본" width={30} height={30} />
+      <VerticalSpacer size={50} />
       <h6 className={styles.contents}>
-        사람이 온다는 건 실은 어마어마한 일이다. <br />
-        그는 그의 과거와 현재와 그리고 <br />
-        그의 미래와 함께 오기 때문이다. <br />
-        한 사람의 인생이 오기 때문이다. <br />
+        8년이 넘는 시간 동안
+        <br />
+        서로의 곁을 지켜 왔습니다.
+        <br />
+        <br />
+        파릇파릇한 대학생부터
+        <br />
+        지금까지 함께해온 것처럼,
+        <br />
+        이제는 범순과 승주가
+        <br />
+        하나의 가정을 이루고자 합니다.
+        <br />
+        <br />
+        하나된 삶을 시작 하는 자리에
+        <br />
+        기쁜 마음으로 초대합니다.
       </h6>
-      <VerticalSpacer size={45} />
-      <h6 className={styles.contents}>-정현종, &apos;방문객&apos;</h6>
-      <VerticalSpacer size={45} />
-      <h6 className={styles.contents}>
-        저희 두 사람이 함께하는 새로운 시작에 <br />
-        귀한 발걸음으로 축복해 주시면 감사하겠습니다.
-      </h6>
-      <VerticalSpacer size={48} />
-      <h6 className={styles.contents}>신랑 {groomFullName} · 신부 {brideFullName}</h6>
-      <VerticalSpacer size={45} />
+      <VerticalSpacer size={188} />
     </div>
   );
 }

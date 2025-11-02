@@ -1,7 +1,7 @@
 @import './styles/colors.css';
 
 :root {
-  --background: #DFE6D1;
+  --background: #F5F7E6;
   --foreground: #171717;
 }
 
@@ -13,16 +13,39 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
+  background-image: url('/bg_pattern.png');
+  background-repeat: repeat;
+  background-size: auto;
   font-family: var(--font-maruburi), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/bg_pattern.png');
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
 }
 
 a {
