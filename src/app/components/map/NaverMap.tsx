@@ -79,14 +79,14 @@ export default function NaverMap({
               ${markerInfo?.title || '📍 위치'}
               <div style="
                 position: absolute;
-                bottom: -6px;
+                bottom: -8px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 0;
                 height: 0;
-                border-left: 6px solid transparent;
-                border-right: 6px solid transparent;
-                border-top: 6px solid #8c9a6f;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid #8c9a6f;
               "></div>
             </div>
           `

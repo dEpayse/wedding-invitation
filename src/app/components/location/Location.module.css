@@ -80,3 +80,145 @@
   overflow: hidden;
   margin: 0 auto;
 }
+
+/* 교통 정보 섹션 */
+.transportSection {
+  padding: 0 32px;
+}
+
+.transportHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.transportTitle {
+  font-size: 12.677px;
+  color: #b5a18a;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.transportDesc {
+  font-size: 11.845px;
+  color: #111111;
+  margin: 0;
+  line-height: 24px;
+  opacity: 0.9;
+}
+
+.transportSubtitle {
+  font-size: 12.157px;
+  color: #111111;
+  margin: 0 0 16px 0;
+  line-height: 24px;
+  opacity: 0.9;
+}
+
+.divider {
+  height: 1px;
+  background-color: white;
+  margin: 24px 32px;
+  opacity: 0.9;
+}
+
+/* 버스 스타일 */
+.busListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.busLineRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.busBadge {
+  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  min-width: 51px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 10px;
+  margin-top: 3px; /* 텍스트 첫 줄 중앙 정렬 (24px 줄 높이의 중앙) */
+}
+
+.busRoutes {
+  font-size: 12.157px;
+  color: #111111;
+  margin: 0;
+  line-height: 24px;
+  opacity: 0.9;
+  flex: 1;
+}
+
+/* 지하철 스타일 */
+.subwayContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subwayGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subwayBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.subwayBadge {
+  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  min-width: 51px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 10px;
+}
+
+.subwayExit {
+  font-size: 11.637px;
+  color: #111111;
+  margin: 0;
+  line-height: 24px;
+  opacity: 0.9;
+}
+
+/* 주차 스타일 */
+.parkingDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.parkingLine {
+  font-size: 11.326px;
+  color: #111111;
+  margin: 0;
+  line-height: 24px;
+  opacity: 0.9;
+}
+
+.parkingLine strong {
+  font-weight: bold;
+}

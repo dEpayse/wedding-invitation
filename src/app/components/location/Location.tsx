@@ -9,6 +9,12 @@ import {
   WEDDING_VENUE_INFO,
   MAP_CONFIG,
 } from "@/app/constants/wedding";
+import {
+  SELF_DRIVING_INFO,
+  BUS_INFO,
+  SUBWAY_INFO,
+  PARKING_INFO,
+} from "@/app/constants/transportation";
 
 export default function Location() {
   const [copyMessage, setCopyMessage] = useState("");
@@ -87,6 +93,112 @@ export default function Location() {
           showControls={MAP_CONFIG.showControls}
         />
       </div>
+
+      {/* 교통 정보 섹션 */}
+      <VerticalSpacer size={56} />
+
+      {/* 자차 */}
+      <div className={styles.transportSection}>
+        <div className={styles.transportHeader}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/ic_car.svg" alt="자차" width={18} height={18} />
+          <p className={styles.transportTitle}>자차</p>
+        </div>
+        <p className={styles.transportDesc}>{SELF_DRIVING_INFO.description}</p>
+      </div>
+
+      <div className={styles.divider} />
+
+      {/* 버스 */}
+      <div className={styles.transportSection}>
+        <div className={styles.transportHeader}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/ic_bus.svg" alt="버스" width={18} height={18} />
+          <p className={styles.transportTitle}>버스</p>
+        </div>
+        <p className={styles.transportSubtitle}>{BUS_INFO.stop}</p>
+        <div className={styles.busListContainer}>
+          {BUS_INFO.lines.map((line, index) => (
+            <div key={index} className={styles.busLineRow}>
+              <div
+                className={styles.busBadge}
+                style={{ backgroundColor: line.color }}
+              >
+                {line.label}
+              </div>
+              <p className={styles.busRoutes}>{line.routes}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.divider} />
+
+      {/* 지하철 */}
+      <div className={styles.transportSection}>
+        <div className={styles.transportHeader}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/ic_subway.svg" alt="지하철" width={18} height={18} />
+          <p className={styles.transportTitle}>지하철</p>
+        </div>
+        <div className={styles.subwayContainer}>
+          {/* 1호선 그룹 */}
+          <div className={styles.subwayGroup}>
+            <div className={styles.subwayBadgeRow}>
+              <div
+                className={styles.subwayBadge}
+                style={{ backgroundColor: SUBWAY_INFO.lines[0].color }}
+              >
+                {SUBWAY_INFO.lines[0].name}
+              </div>
+            </div>
+            <p className={styles.subwayExit}>{SUBWAY_INFO.lines[0].exit}</p>
+          </div>
+
+          {/* 경의중앙, 수인분당, 경춘선 그룹 */}
+          <div className={styles.subwayGroup}>
+            <div className={styles.subwayBadgeRow}>
+              {SUBWAY_INFO.lines.slice(1).map((line, index) => (
+                <div
+                  key={index}
+                  className={styles.subwayBadge}
+                  style={{ backgroundColor: line.color }}
+                >
+                  {line.name}
+                </div>
+              ))}
+            </div>
+            <p className={styles.subwayExit}>{SUBWAY_INFO.lines[1].exit}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.divider} />
+
+      {/* 주차 */}
+      <div className={styles.transportSection}>
+        <div className={styles.transportHeader}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/ic_parking.svg" alt="주차" width={18} height={18} />
+          <p className={styles.transportTitle}>주차</p>
+        </div>
+        <div className={styles.parkingDesc}>
+          {PARKING_INFO.description.map((line, index) => (
+            <p key={index} className={styles.parkingLine}>
+              {index === 0 ? (
+                <>
+                  <strong>지하 3층, 4층</strong>만 <strong>주차 가능</strong>
+                  합니다.
+                </>
+              ) : (
+                line
+              )}
+            </p>
+          ))}
+        </div>
+      </div>
+
+      <VerticalSpacer size={80} />
     </div>
   );
 }
