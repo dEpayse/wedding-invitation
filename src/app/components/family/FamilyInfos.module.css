@@ -1,38 +1,55 @@
 .container {
-    background-color: #F3F5F0;
-    opacity: 0.9;
+  background-color: #ffffff;
 }
 
 .familyRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 72px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding: 0 72px;
+}
+
+.familyFirstRow {
+  display: flex;
+  justify-content: left;
+  padding: 0 72px;
+}
+
+.familySecondRow {
+  display: flex;
+  justify-content: right;
+  padding: 0 72px;
 }
 
 .text {
-    color: #111111;
+  font-weight: 700;
+  color: #111111;
+}
+
+.relationText {
+  font-weight: 400;
+  color: #111111;
 }
 
 .divider {
-    height: 1px;
-    margin: 0 40px;
-    background-color: #697453;
-    opacity: 0.2;
+  height: 1px;
+  margin: 0 40px;
+  background-color: #697453;
+  opacity: 0.2;
 }
 
 :global(.button).congratulations {
-    background-color: #AFC18B;
-    border-radius: 8px;
-    font-size: 13px;
-    width: calc(100% - 72px);
-    margin: 0 36px;
+  background-color: #afc18b;
+  border-radius: 8px;
+  font-size: 13px;
+  width: calc(100% - 72px);
+  margin: 0 36px;
 }
 
 .congratulationsDiv {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

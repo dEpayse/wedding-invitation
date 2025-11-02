@@ -17,10 +17,10 @@ export default function Home() {
         <Container>
           <TopContent />
           <MainMessage />
+          <FamilyInfos />
           <ViewPortDate />
           <Calendar />
           <Dday />
-          <FamilyInfos />
           <Gallery />
           <Location />
         </Container>
