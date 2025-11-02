@@ -1,16 +1,44 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Maruburi 폰트 - 여러 weight를 하나의 font-family로 관리
+const maruburi = localFont({
+  src: [
+    {
+      path: "../../public/fonts/maruburi_light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/maruburi_regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/maruburi_semibold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/maruburi_bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/maruburi_extrabold.otf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-maruburi",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// La Paloma 폰트
+const laPaloma = localFont({
+  src: "../../public/fonts/la_paloma.ttf",
+  variable: "--font-la-paloma",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${maruburi.variable} ${laPaloma.variable}`}>
         <Script
           src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=0qse53sk6j"
           strategy="beforeInteractive"
