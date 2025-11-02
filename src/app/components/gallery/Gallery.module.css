@@ -28,7 +28,7 @@
   gap: 4px;
   max-width: 400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .gridItem {
@@ -52,4 +52,29 @@
 
 .gridImage:hover {
   transform: scale(1.05);
+}
+
+/* 더보기 버튼 */
+.moreButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moreButton {
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #111111;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moreButton:hover {
+  background-color: #f5f5f5;
+  border-color: #8c9a6f;
+  color: #8c9a6f;
 }
