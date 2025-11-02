@@ -9,6 +9,7 @@ import { FamilyInfos } from "@/app/components/family/FamilyInfos";
 import Gallery from "@/app/components/gallery/Gallery";
 import Location from "@/app/components/location/Location";
 import Rsvp from "@/app/components/rsvp/Rsvp";
+import Account from "@/app/components/account/Account";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           <Gallery />
           <Location />
           <Rsvp />
+          <Account />
         </Container>
 
         <div className={styles.ctas}>

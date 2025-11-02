@@ -1,0 +1,121 @@
+.container {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 0 32px;
+}
+
+.topDivider {
+  width: 60px;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 13.3px;
+  color: #020817;
+  margin: 0;
+  line-height: 22.8px;
+}
+
+.description {
+  font-size: 13.537px;
+  color: #020817;
+  opacity: 0.5;
+  margin: 0;
+  line-height: 22.8px;
+}
+
+.accountButton {
+  width: 100%;
+  max-width: 336px;
+  height: 60px;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 0 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13.344px;
+  color: #444444;
+  margin: 0 auto;
+}
+
+.accountButton:hover {
+  background-color: #fafafa;
+  transform: translateY(-1px);
+  box-shadow: 0px 6px 8px -1px rgba(0, 0, 0, 0.15),
+    0px 3px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+.accountButton:active {
+  transform: translateY(0);
+}
+
+.arrowDown {
+  transition: transform 0.3s ease;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.accountInfo {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 12px auto 0;
+  max-width: 336px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.accountRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.accountRow:last-child {
+  border-bottom: none;
+}
+
+.accountLabel {
+  font-size: 13px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.accountValue {
+  font-size: 13px;
+  color: #111111;
+  flex: 1;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.copyButton {
+  background-color: #8c9a6f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.copyButton:hover {
+  background-color: #7a8860;
+}
+
+.copyButton:active {
+  transform: scale(0.95);
+}
