@@ -3,10 +3,9 @@ import styles from "./page.module.css";
 import Container from "./components/Container";
 import TopContent from "./components/TopContent";
 import MainMessage from "./components/MainMessage";
-import ViewPortDate from "./components/ViewPortDate";
 import { Calendar } from "./components/date/Calendar";
 import { Dday } from "./components/date/Dday";
-import {FamilyInfos} from "@/app/components/family/FamilyInfos";
+import { FamilyInfos } from "@/app/components/family/FamilyInfos";
 import Gallery from "@/app/components/gallery/Gallery";
 import Location from "@/app/components/location/Location";
 
@@ -18,7 +17,6 @@ export default function Home() {
           <TopContent />
           <MainMessage />
           <FamilyInfos />
-          <ViewPortDate />
           <Calendar />
           <Dday />
           <Gallery />
