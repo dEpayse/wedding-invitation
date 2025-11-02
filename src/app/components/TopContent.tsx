@@ -5,7 +5,7 @@ import {brideFirstName, brideFirstNameEn, groomFirstName, groomFirstNameEn} from
 export default function TopContent() {
   return (
     <div className={styles.topContent}>
-      <p className={styles.imageWrapper}>
+      <div className={styles.imageWrapper}>
         <Image
           src="/cover_image.png"
           alt={`${groomFirstName}과 ${brideFirstName}의 결혼식`}
@@ -28,7 +28,7 @@ export default function TopContent() {
         <div className={styles.textOverlay}>
           <p className={styles.names}>{brideFirstNameEn} AND {groomFirstNameEn}</p>
         </div>
-      </p>
+      </div>
     </div>
   );
 }
