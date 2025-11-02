@@ -23,13 +23,24 @@
 }
 
 .title {
-  font-size: 24px;
-  margin: 24px 0 16px;
-  font-weight: 500;
+  position: absolute;
+  font-family: var(--font-la-paloma);
+  font-size: 36px;
+  margin: 76px 0;
+  top: 0;
+  color: white;
+  z-index: 2;
+  left: 50%; /* 왼쪽에서 50% 위치 */
+  transform: translateX(-50%);
+  white-space: normal;
+  line-height: 70px;
+  font-weight: 100;
 }
 
-.subtitle {
-  font-size: 14px;
+.names {
+  font-size: 11px;
+  font-family: var(--font-maruburi);
+  font-weight: 300;
   line-height: 1.6;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
