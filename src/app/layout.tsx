@@ -7,6 +7,11 @@ import "./globals.css";
 const maruburi = localFont({
   src: [
     {
+      path: "../../public/fonts/maruburi_extralight.otf",
+      weight: "200",
+      style: "normal",
+    },
+    {
       path: "../../public/fonts/maruburi_light.otf",
       weight: "300",
       style: "normal",
@@ -24,11 +29,6 @@ const maruburi = localFont({
     {
       path: "../../public/fonts/maruburi_bold.otf",
       weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/maruburi_extrabold.otf",
-      weight: "800",
       style: "normal",
     },
   ],

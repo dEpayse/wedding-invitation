@@ -56,7 +56,7 @@ function FamilyInfo({
       <div className={styles.familyFirstRow}>
         <div>
           <span className={styles.text}>{fatherFullName}</span>
-          <span className={styles.text}> • </span>
+          <span className={styles.relationText}> · </span>
           <span className={styles.text}>{motherFullName}</span>
         </div>
         <HorizontalSpacer size={8} />
