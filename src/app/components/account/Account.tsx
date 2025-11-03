@@ -34,8 +34,6 @@ export default function Account() {
 
   return (
     <div className={styles.container}>
-      <VerticalSpacer size={80} />
-
       {/* 상단 구분선 */}
       <div className={styles.topDivider} />
 
