@@ -10,6 +10,7 @@ import Gallery from "@/app/components/gallery/Gallery";
 import Location from "@/app/components/location/Location";
 import Rsvp from "@/app/components/rsvp/Rsvp";
 import Account from "@/app/components/account/Account";
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
           <Location />
           <Rsvp />
           <Account />
+          <Footer />
         </Container>
 
         <div className={styles.ctas}>

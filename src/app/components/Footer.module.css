@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.footerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
