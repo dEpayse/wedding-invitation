@@ -1,0 +1,156 @@
+/* 전체 화면 오버레이 - Container 영역 전체 */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Container와 동일한 max-width 사용 */
+  max-width: var(--container-max-width, 400px);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 모달 컨텐츠 */
+.modalContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+/* X 닫기 버튼 */
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111111;
+  transition: opacity 0.2s ease;
+}
+
+.closeButton:hover {
+  opacity: 0.7;
+}
+
+/* 이미지 컨테이너 */
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  box-sizing: border-box;
+}
+
+/* 이미지 */
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 좌우 네비게이션 버튼 공통 스타일 */
+.navButton {
+  position: absolute;
+  bottom: 30px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+  transition: color 0.2s ease;
+  padding: 0;
+  line-height: 14px;
+}
+
+.navButton:hover {
+  color: #111111;
+}
+
+.navButton:active {
+  transform: scale(0.95);
+}
+
+/* 좌측 화살표 - 인디케이터 왼쪽 */
+.navButtonLeft {
+  left: 16px;
+}
+
+/* 우측 화살표 - 인디케이터 오른쪽 */
+.navButtonRight {
+  right: 16px;
+}
+
+/* 페이지 인디케이터 */
+.pageIndicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #666666;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 32px;
+  z-index: 10001;
+  user-select: none;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .closeButton {
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .imageContainer {
+    padding: 70px 0;
+  }
+
+  .navButton {
+    width: 28px;
+    height: 28px;
+    bottom: 20px;
+    line-height: 13px;
+  }
+
+  .navButtonLeft {
+    left: 12px;
+  }
+
+  .navButtonRight {
+    right: 12px;
+  }
+
+  .pageIndicator {
+    bottom: 20px;
+    font-size: 13px;
+    line-height: 28px;
+  }
+}

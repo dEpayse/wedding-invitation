@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import styles from './Gallery.module.css';
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
+import ImageModal from './ImageModal';
 
 export default function Gallery() {
     const [showAll, setShowAll] = useState(false);
+    const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
     // 갤러리 이미지 데이터 (24개)
     const galleryImages = [
@@ -55,7 +57,7 @@ export default function Gallery() {
                             src={image.src}
                             alt={image.alt}
                             className={styles.gridImage}
-                            onClick={() => console.log(`이미지 ${index + 1} 클릭됨`)}
+                            onClick={() => setSelectedImageIndex(index)}
                         />
                     </div>
                 ))}
@@ -77,6 +79,15 @@ export default function Gallery() {
             )}
 
             <VerticalSpacer size={80}/>
+
+            {/* 이미지 모달 */}
+            {selectedImageIndex !== null && (
+                <ImageModal
+                    images={galleryImages}
+                    initialIndex={selectedImageIndex}
+                    onClose={() => setSelectedImageIndex(null)}
+                />
+            )}
         </div>
     );
 }
