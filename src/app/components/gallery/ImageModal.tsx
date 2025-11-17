@@ -47,11 +47,22 @@ export default function ImageModal({ images, initialIndex, onClose }: ImageModal
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [onClose, goToPrevious, goToNext]);
 
-    // body와 Container 스크롤 방지
+    // body와 Container 스크롤 방지 및 스크롤 위치 복원
     useEffect(() => {
+        // 현재 스크롤 위치 저장
+        const scrollY = window.scrollY;
+        const scrollX = window.scrollX;
+
         // body 스크롤 방지
         const originalBodyOverflow = document.body.style.overflow;
+        const originalBodyPosition = document.body.style.position;
+        const originalBodyTop = document.body.style.top;
+        const originalBodyWidth = document.body.style.width;
+
         document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
 
         // Container 스크롤 방지 (Container는 overflow-y: auto를 가지고 있음)
         const container = document.querySelector('[class*="Container_container"]') as HTMLElement;
@@ -61,7 +72,16 @@ export default function ImageModal({ images, initialIndex, onClose }: ImageModal
         }
 
         return () => {
+            // body 스타일 복원
             document.body.style.overflow = originalBodyOverflow;
+            document.body.style.position = originalBodyPosition;
+            document.body.style.top = originalBodyTop;
+            document.body.style.width = originalBodyWidth;
+
+            // 스크롤 위치 복원
+            window.scrollTo(scrollX, scrollY);
+
+            // Container 스타일 복원
             if (container && originalContainerOverflow !== undefined) {
                 container.style.overflow = originalContainerOverflow;
             }
