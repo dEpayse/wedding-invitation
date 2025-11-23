@@ -67,55 +67,109 @@
 }
 
 .accountInfo {
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin: 12px auto 0;
   max-width: 336px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.accountRow {
+.accountCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.accountHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 12px;
 }
 
-.accountRow:last-child {
-  border-bottom: none;
-}
-
-.accountLabel {
-  font-size: 13px;
-  color: #666666;
-  font-weight: 500;
-}
-
-.accountValue {
-  font-size: 13px;
+.accountName {
+  font-size: 14px;
   color: #111111;
-  flex: 1;
-  text-align: right;
-  margin-right: 8px;
+  font-weight: 600;
+}
+
+.accountRelation {
+  font-size: 12px;
+  color: #666666;
+  margin-left: 4px;
+}
+
+.accountBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bankName {
+  font-size: 12px;
+  color: #666666;
+}
+
+.accountNumberRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accountNumber {
+  font-size: 14px;
+  color: #111111;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.accountActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .copyButton {
-  background-color: #8c9a6f;
-  color: white;
+  background: none;
   border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  font-size: 12px;
+  padding: 0;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .copyButton:hover {
-  background-color: #7a8860;
+  opacity: 1;
 }
 
-.copyButton:active {
-  transform: scale(0.95);
+.copyButton svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.kakaoPayButton {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.kakaoPayButton:hover {
+  opacity: 0.8;
+}
+
+.kakaoPayButton img {
+  width: 32px;
+  height: auto;
+  display: block;
 }
