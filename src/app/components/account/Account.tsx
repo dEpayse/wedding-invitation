@@ -28,10 +28,38 @@ export default function Account() {
       alert("카카오페이는 모바일에서만 사용 가능합니다.");
       return;
     }
-    
+
+    const cleanedAccountNumber = account.accountNumber.replace(/-/g, "");
+
     // 카카오페이 송금 URL 스킴
-    const kakaoPayUrl = `https://qr.kakaopay.com/Ej8MNa6Wq`;
+    const bankCode = getBankCode(account.bank);
+    const kakaoPayUrl = `kakaotalk://kakaopay/money/transfer?bank=${bankCode}&account=${cleanedAccountNumber}&name=${encodeURIComponent(account.accountHolder)}`;
+
     window.location.href = kakaoPayUrl;
+  };
+
+  const getBankCode = (bankName: string): string => {
+    const bankCodes: { [key: string]: string } = {
+      "카카오뱅크": "090",
+      "국민은행": "004",
+      "우체국": "071",
+      "농협": "011",
+      "신한은행": "088",
+      "우리은행": "020",
+      "하나은행": "081",
+      "IBK기업은행": "003",
+      "SC제일은행": "023",
+      "한국씨티은행": "027",
+      "경남은행": "039",
+      "광주은행": "034",
+      "대구은행": "031",
+      "부산은행": "032",
+      "전북은행": "037",
+      "제주은행": "035",
+      "케이뱅크": "089",
+      "토스뱅크": "092",
+    };
+    return bankCodes[bankName] || "";
   };
 
   const renderAccountCard = (account: AccountInfo) => {
