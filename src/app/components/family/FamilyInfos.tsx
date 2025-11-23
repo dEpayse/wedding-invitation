@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./FamilyInfos.module.css";
 import {
   brideFatherFullName,
@@ -9,28 +11,31 @@ import {
 } from "@/app/constants/name";
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import HorizontalSpacer from "../common/HorizontalSpacer";
+import FadeInChildren from "../common/FadeInChildren";
 
 export function FamilyInfos() {
   return (
     <div className={styles.container}>
       <VerticalSpacer size={120} />
-      <FamilyInfo
-        fatherFullName={groomFatherFullName}
-        motherFullName={groomMotherFullName}
-        relation={`의 아들`}
-        groomOrBrideStr={`신랑`}
-        groomOrBrideFirstName={groomFirstName}
-      />
-      <VerticalSpacer size={32} />
-      <div className={styles.divider} />
-      <VerticalSpacer size={32} />
-      <FamilyInfo
-        fatherFullName={brideFatherFullName}
-        motherFullName={brideMotherFullName}
-        relation={`의 딸`}
-        groomOrBrideStr={`신부`}
-        groomOrBrideFirstName={brideFirstName}
-      />
+      <FadeInChildren staggerDelay={150}>
+        <FamilyInfo
+          fatherFullName={groomFatherFullName}
+          motherFullName={groomMotherFullName}
+          relation={`의 아들`}
+          groomOrBrideStr={`신랑`}
+          groomOrBrideFirstName={groomFirstName}
+        />
+        <VerticalSpacer size={32} />
+        <div className={styles.divider} />
+        <VerticalSpacer size={32} />
+        <FamilyInfo
+          fatherFullName={brideFatherFullName}
+          motherFullName={brideMotherFullName}
+          relation={`의 딸`}
+          groomOrBrideStr={`신부`}
+          groomOrBrideFirstName={brideFirstName}
+        />
+      </FadeInChildren>
       <VerticalSpacer size={120} />
     </div>
   );

@@ -4,6 +4,7 @@ import styles from "./Location.module.css";
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import React, { useState } from "react";
 import NaverMap from "@/app/components/map/NaverMap";
+import FadeInChildren from "../common/FadeInChildren";
 import {
   WEDDING_LOCATION,
   WEDDING_VENUE_INFO,
@@ -49,7 +50,9 @@ export default function Location() {
   return (
     <div className={styles.container}>
       <VerticalSpacer size={80} />
-      <p className={styles.locationTitle}>Location</p>
+      <FadeInChildren staggerDelay={100}>
+        <p className={styles.locationTitle}>Location</p>
+      </FadeInChildren>
 
       {/* 장소명과 전화 아이콘 */}
       <div className={styles.infoRow}>

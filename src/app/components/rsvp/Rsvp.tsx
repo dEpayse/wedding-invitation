@@ -6,6 +6,7 @@ import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import { groomFirstName, brideFirstName } from "@/app/constants/name";
 import { WEDDING_VENUE_INFO } from "@/app/constants/wedding";
 import AttendanceModal from "./AttendanceModal";
+import FadeInChildren from "../common/FadeInChildren";
 
 export default function Rsvp() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,16 +19,17 @@ export default function Rsvp() {
     <div className={styles.container}>
       <VerticalSpacer size={80} />
 
-      <p className={styles.title}>Rsvp</p>
-      <VerticalSpacer size={40} />
+      <FadeInChildren staggerDelay={150}>
+        <p className={styles.title}>Rsvp</p>
+        <VerticalSpacer size={40} />
 
-      <p className={styles.subtitle}>참석 의사</p>
-      <VerticalSpacer size={8} />
-      <p className={styles.description}>
-        모든 분들을 소중히 모실 수 있도록 전해주세요
-      </p>
+        <p className={styles.subtitle}>참석 의사</p>
+        <VerticalSpacer size={8} />
+        <p className={styles.description}>
+          모든 분들을 소중히 모실 수 있도록 전해주세요
+        </p>
 
-      <VerticalSpacer size={40} />
+        <VerticalSpacer size={40} />
 
       {/* 참석 의사 카드 */}
       <div className={styles.card}>
@@ -61,6 +63,7 @@ export default function Rsvp() {
           참석 의사 체크하기
         </button>
       </div>
+      </FadeInChildren>
 
       <VerticalSpacer size={80} />
 

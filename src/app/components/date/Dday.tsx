@@ -6,6 +6,7 @@ import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import { useEffect, useState } from "react";
 import { calculateTimeRemaining, TimeRemaining } from "@/app/utils/dateUtils";
 import { WEDDING_DATE } from "@/app/constants/date";
+import FadeInChildren from "../common/FadeInChildren";
 
 export function Dday() {
   const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>({
@@ -33,14 +34,16 @@ export function Dday() {
   return (
     <div className={styles.background}>
       <VerticalSpacer size={32} />
-      <div className={styles.dDayContainer}>
-        <RemainCountCard count={timeRemaining.days} unit="DAYS" />
-        <RemainCountCard count={timeRemaining.hours} unit="HOURS" />
-        <RemainCountCard count={timeRemaining.minutes} unit="MINUTES" />
-        <RemainCountCard count={timeRemaining.seconds} unit="SECONDS" />
-      </div>
-      <VerticalSpacer size={32} />
-      <RemainGuide count={timeRemaining.days} unit={"일"} />
+      <FadeInChildren staggerDelay={100}>
+        <div className={styles.dDayContainer}>
+          <RemainCountCard count={timeRemaining.days} unit="DAYS" />
+          <RemainCountCard count={timeRemaining.hours} unit="HOURS" />
+          <RemainCountCard count={timeRemaining.minutes} unit="MINUTES" />
+          <RemainCountCard count={timeRemaining.seconds} unit="SECONDS" />
+        </div>
+        <VerticalSpacer size={32} />
+        <RemainGuide count={timeRemaining.days} unit={"일"} />
+      </FadeInChildren>
       <VerticalSpacer size={105} />
     </div>
   );

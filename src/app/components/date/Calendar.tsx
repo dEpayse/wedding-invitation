@@ -1,18 +1,23 @@
+"use client";
+
 import VerticalSpacer from "../common/VerticalSpacer";
 import styles from "./Calendar.module.css";
+import FadeInChildren from "../common/FadeInChildren";
 
 export function Calendar() {
   return (
     <div className={styles.calendarBg}>
       <VerticalSpacer size={80} />
-      <p className={styles.calendarTitle}> wedding day </p>
-      <p className={styles.dateTitle}> 2026년 2월 7일 토요일 | 오후 4시 </p>
-      <VerticalSpacer size={34} />
-      <hr className={styles.divider} />
-      <VerticalSpacer size={22} />
-      <InnerCalendar year={2026} month={2} highlightDates={[7]} />
-      <VerticalSpacer size={22} />
-      <hr className={styles.divider} />
+      <FadeInChildren staggerDelay={100}>
+        <p className={styles.calendarTitle}> wedding day </p>
+        <p className={styles.dateTitle}> 2026년 2월 7일 토요일 | 오후 4시 </p>
+        <VerticalSpacer size={34} />
+        <hr className={styles.divider} />
+        <VerticalSpacer size={22} />
+        <InnerCalendar year={2026} month={2} highlightDates={[7]} />
+        <VerticalSpacer size={22} />
+        <hr className={styles.divider} />
+      </FadeInChildren>
       <VerticalSpacer size={32} />
     </div>
   );

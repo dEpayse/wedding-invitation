@@ -15,19 +15,19 @@ export default function TopContent() {
           priority
         />
 
-        {/* 제목 */}
-        <div className={styles.title}>
-          <p>
-            We are
-            <br />
-            getting
-            <br />
-            married
-          </p>
-        </div>
-        <div className={styles.textOverlay}>
-          <p className={styles.names}>{brideFirstNameEn} AND {groomFirstNameEn}</p>
-        </div>
+          {/* 제목 */}
+          <div className={styles.title}>
+            <p>
+              We are
+              <br />
+              getting
+              <br />
+              married
+            </p>
+          </div>
+          <div className={styles.textOverlay}>
+            <p className={styles.names}>{brideFirstNameEn} AND {groomFirstNameEn}</p>
+          </div>
       </div>
     </div>
   );

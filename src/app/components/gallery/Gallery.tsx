@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styles from './Gallery.module.css';
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import ImageModal from './ImageModal';
+import FadeInChildren from '../common/FadeInChildren';
 
 export default function Gallery() {
     const [showAll, setShowAll] = useState(false);
@@ -43,9 +44,11 @@ export default function Gallery() {
     return (
         <div className={styles.container}>
             <VerticalSpacer size={80}/>
-            <p className={styles.galleryTitle}>Gallery</p>
-            <VerticalSpacer size={32}/>
-            <p className={styles.galleryGuide}>사진을 클릭하시면 전체 화면 보기가 가능합니다</p>
+            <FadeInChildren staggerDelay={100}>
+                <p className={styles.galleryTitle}>Gallery</p>
+                <VerticalSpacer size={32}/>
+                <p className={styles.galleryGuide}>사진을 클릭하시면 전체 화면 보기가 가능합니다</p>
+            </FadeInChildren>
             <VerticalSpacer size={40}/>
 
             {/* 3x3 (또는 확장된) 그리드 갤러리 */}

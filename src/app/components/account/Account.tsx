@@ -3,6 +3,7 @@
 import styles from "./Account.module.css";
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import { useState } from "react";
+import FadeInChildren from "../common/FadeInChildren";
 
 interface AccountInfo {
   bank: string;
@@ -39,13 +40,15 @@ export default function Account() {
 
       <VerticalSpacer size={73} />
 
-      <p className={styles.title}>마음 전하실 곳</p>
-      <VerticalSpacer size={8} />
-      <p className={styles.description}>
-        참석이 어려우신 분들을 위해 기재했습니다
-        <br />
-        너그러운 마음으로 양해 부탁드립니다
-      </p>
+      <FadeInChildren staggerDelay={100}>
+        <p className={styles.title}>마음 전하실 곳</p>
+        <VerticalSpacer size={8} />
+        <p className={styles.description}>
+          참석이 어려우신 분들을 위해 기재했습니다
+          <br />
+          너그러운 마음으로 양해 부탁드립니다
+        </p>
+      </FadeInChildren>
 
       <VerticalSpacer size={43} />
 
