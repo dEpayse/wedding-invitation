@@ -136,7 +136,7 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.3;
   transition: opacity 0.2s ease;
   display: flex;
   align-items: center;

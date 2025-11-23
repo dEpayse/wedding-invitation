@@ -27,7 +27,7 @@
 
 .locationAddr {
   font-size: 15px;
-  color: var(--color-primary);
+  color: rgba(4, 13, 37, 0.5);
   margin: 0;
 }
 
@@ -39,6 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: brightness(0) saturate(100%) invert(69%) sepia(2%) saturate(126%) hue-rotate(56deg) brightness(92%) contrast(87%);
   transition: transform 0.2s ease;
 }
 
