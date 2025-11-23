@@ -62,13 +62,13 @@ export default function NaverMap({
         icon: {
           content: `
             <div style="
-              background: #8c9a6f;
+              background: #111111;
               color: white;
               padding: 10px 10px;
               border-radius: 8px;
               font-size: 14px;
               font-weight: 500;
-              box-shadow: 0 10px 15px -3px rgba(140, 154, 111, 0.4);
+              box-shadow: 0 10px 15px -3px rgba(17, 17, 17, 0.4);
               border: none;
               transform: translate(-50%, -86%);
               position: relative;
@@ -79,14 +79,14 @@ export default function NaverMap({
               ${markerInfo?.title || '📍 위치'}
               <div style="
                 position: absolute;
-                bottom: -8px;
+                bottom: -7px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 0;
                 height: 0;
                 border-left: 8px solid transparent;
                 border-right: 8px solid transparent;
-                border-top: 8px solid #8c9a6f;
+                border-top: 8px solid #111111;
               "></div>
             </div>
           `
