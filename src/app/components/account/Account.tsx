@@ -28,8 +28,7 @@ export default function Account() {
       alert("카카오페이는 모바일에서만 사용 가능합니다.");
       return;
     }
-
-    const cleanedAccountNumber = account.accountNumber.replace(/-/g, "");
+    
     // 카카오페이 송금 URL 스킴
     const kakaoPayUrl = `https://qr.kakaopay.com/Ej8MNa6Wq`;
     window.location.href = kakaoPayUrl;
