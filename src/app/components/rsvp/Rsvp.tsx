@@ -1,14 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import styles from "./Rsvp.module.css";
 import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import { groomFirstName, brideFirstName } from "@/app/constants/name";
 import { WEDDING_VENUE_INFO } from "@/app/constants/wedding";
+import AttendanceModal from "./AttendanceModal";
 
 export default function Rsvp() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleCheckAttendance = () => {
-    // TODO: 참석 의사 체크 로직 구현
-    alert("참석 의사 체크 기능은 준비 중입니다.");
+    setIsModalOpen(true);
   };
 
   return (
@@ -60,6 +63,11 @@ export default function Rsvp() {
       </div>
 
       <VerticalSpacer size={80} />
+
+      {/* 참석 의사 모달 */}
+      {isModalOpen && (
+        <AttendanceModal onClose={() => setIsModalOpen(false)} />
+      )}
     </div>
   );
 }
