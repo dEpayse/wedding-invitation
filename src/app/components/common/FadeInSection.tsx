@@ -18,14 +18,15 @@ export default function FadeInSection({
     const sectionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        const currentRef = sectionRef.current;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 // 섹션이 뷰포트에 들어오면 visible 상태로 변경
                 if (entry.isIntersecting) {
                     setIsVisible(true);
                     // 한 번 보이면 observer 해제 (재실행 방지)
-                    if (sectionRef.current) {
-                        observer.unobserve(sectionRef.current);
+                    if (currentRef) {
+                        observer.unobserve(currentRef);
                     }
                 }
             },
@@ -35,13 +36,13 @@ export default function FadeInSection({
             }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [threshold]);
