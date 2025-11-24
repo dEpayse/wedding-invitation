@@ -38,20 +38,20 @@ export const groomAccounts: AccountInfo[] = [
 
 export const brideAccounts: AccountInfo[] = [
   {
-    bank: "카카오뱅크",
-    accountNumber: "3333-28-3589646",
+    bank: "신한은행",
+    accountNumber: "110-515-356912",
     accountHolder: brideFullName,
     relation: "신부",
   },
   {
-    bank: "국민은행",
-    accountNumber: "123-999-888777",
+    bank: "농협",
+    accountNumber: "302-0863-7662-11",
     accountHolder: brideFatherFullName,
     relation: "신부 아버지",
   },
   {
-    bank: "국민은행",
-    accountNumber: "123-444-555666",
+    bank: "농협",
+    accountNumber: "006-02-154613",
     accountHolder: brideMotherFullName,
     relation: "신부 어머니",
   },
