@@ -29,13 +29,15 @@ export default function Account() {
       return;
     }
 
+    // 계좌번호 복사 후 카카오톡 실행
     const cleanedAccountNumber = account.accountNumber.replace(/-/g, "");
+    navigator.clipboard.writeText(cleanedAccountNumber);
 
-    // 카카오페이 송금 URL 스킴
-    const bankCode = getBankCode(account.bank);
-    const kakaoPayUrl = `kakaotalk://kakaopay/money/transfer?bank=${bankCode}&account=${cleanedAccountNumber}&name=${encodeURIComponent(account.accountHolder)}`;
+    // 카카오톡 실행 (카카오페이 직접 연동은 공식 API가 필요함)
+    alert(`${account.bank} ${cleanedAccountNumber}\n계좌번호가 복사되었습니다.\n\n카카오톡에서 송금 > 계좌번호 입력을 이용해주세요.`);
 
-    window.location.href = kakaoPayUrl;
+    // 카카오톡 실행 시도
+    window.location.href = "kakaotalk://";
   };
 
   const getBankCode = (bankName: string): string => {
