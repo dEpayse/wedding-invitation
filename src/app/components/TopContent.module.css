@@ -31,12 +31,13 @@
   margin: 76px 0;
   top: 0;
   color: white;
-  z-index: 2;
+  z-index: 100;
   left: 50%; /* 왼쪽에서 50% 위치 */
   transform: translateX(-50%);
   white-space: normal;
   line-height: 70px;
   font-weight: 100;
+  pointer-events: none; /* 오버레이가 보이도록 */
 }
 
 .names {
@@ -195,5 +196,81 @@
                rotateX(0deg)
                rotateY(0deg);
     opacity: 0;
+  }
+}
+
+/* 손글씨 애니메이션 */
+.line {
+  line-height: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.lineSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.lineSvg text {
+  font-family: var(--font-la-paloma);
+  font-size: 36px;
+  font-weight: 100;
+}
+
+.lineSvg tspan {
+  fill: none;
+  stroke: white;
+  stroke-width: 1.5px;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0;
+}
+
+/* We are - 6 글자 */
+.char1 { animation: writeChar 0.3s ease-out 0s forwards; }
+.char2 { animation: writeChar 0.3s ease-out 0.2s forwards; }
+.char3 { animation: writeChar 0.15s ease-out 0.4s forwards; }
+.char4 { animation: writeChar 0.3s ease-out 0.55s forwards; }
+.char5 { animation: writeChar 0.3s ease-out 0.75s forwards; }
+.char6 { animation: writeChar 0.3s ease-out 0.95s forwards; }
+
+/* getting - 7 글자 */
+.char7 { animation: writeChar 0.3s ease-out 1.3s forwards; }
+.char8 { animation: writeChar 0.3s ease-out 1.5s forwards; }
+.char9 { animation: writeChar 0.3s ease-out 1.7s forwards; }
+.char10 { animation: writeChar 0.3s ease-out 1.9s forwards; }
+.char11 { animation: writeChar 0.3s ease-out 2.1s forwards; }
+.char12 { animation: writeChar 0.3s ease-out 2.3s forwards; }
+.char13 { animation: writeChar 0.3s ease-out 2.5s forwards; }
+
+/* married - 7 글자 */
+.char14 { animation: writeChar 0.3s ease-out 2.9s forwards; }
+.char15 { animation: writeChar 0.3s ease-out 3.1s forwards; }
+.char16 { animation: writeChar 0.3s ease-out 3.3s forwards; }
+.char17 { animation: writeChar 0.3s ease-out 3.5s forwards; }
+.char18 { animation: writeChar 0.3s ease-out 3.7s forwards; }
+.char19 { animation: writeChar 0.3s ease-out 3.9s forwards; }
+.char20 { animation: writeChar 0.3s ease-out 4.1s forwards; }
+
+@keyframes writeChar {
+  0% {
+    stroke-dashoffset: 100;
+    fill: none;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: white;
+    stroke-width: 0;
+    opacity: 1;
   }
 }
