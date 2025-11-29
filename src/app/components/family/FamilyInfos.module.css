@@ -7,19 +7,18 @@
   justify-content: left;
   align-items: center;
   width: 100%;
-  padding: 0 72px;
 }
 
 .familyFirstRow {
   display: flex;
   justify-content: left;
-  padding: 0 72px;
+  padding: 0 0 0 18%;
 }
 
 .familySecondRow {
   display: flex;
   justify-content: right;
-  padding: 0 72px;
+  padding: 0 18% 0 0;
 }
 
 .text {
