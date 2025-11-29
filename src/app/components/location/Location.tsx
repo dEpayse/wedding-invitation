@@ -55,151 +55,159 @@ export default function Location() {
       </FadeInChildren>
 
       {/* 장소명과 전화 아이콘 */}
-      <div className={styles.infoRow}>
-        <p className={styles.locationName}>{WEDDING_VENUE_INFO.title}</p>
-        <button
-          className={styles.iconButton}
-          onClick={handleCall}
-          aria-label="전화 걸기"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/ic_call.svg" alt="전화" width={14} height={14} />
-        </button>
-      </div>
+      <FadeInChildren staggerDelay={100}>
+        <div className={styles.infoRow}>
+          <p className={styles.locationName}>{WEDDING_VENUE_INFO.title}</p>
+          <button
+            className={styles.iconButton}
+            onClick={handleCall}
+            aria-label="전화 걸기"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ic_call.svg" alt="전화" width={14} height={14} />
+          </button>
+        </div>
+      </FadeInChildren>
 
       <VerticalSpacer size={10} />
 
       {/* 주소와 복사 아이콘 */}
-      <div className={styles.infoRow}>
-        <p className={styles.locationAddr}>{WEDDING_VENUE_INFO.address}</p>
-        <button
-          className={styles.iconButton}
-          onClick={handleCopyAddress}
-          aria-label="주소 복사"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/ic_copy.svg" alt="복사" width={16} height={16} />
-        </button>
-      </div>
+      <FadeInChildren staggerDelay={100}>
+        <div className={styles.infoRow}>
+          <p className={styles.locationAddr}>{WEDDING_VENUE_INFO.address}</p>
+          <button
+            className={styles.iconButton}
+            onClick={handleCopyAddress}
+            aria-label="주소 복사"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ic_copy.svg" alt="복사" width={16} height={16} />
+          </button>
+        </div>
+      </FadeInChildren>
 
       {/* 복사 메시지 */}
       {copyMessage && <div className={styles.copyMessage}>{copyMessage}</div>}
 
       <VerticalSpacer size={56} />
-      <div className={styles.mapContainer}>
-        <NaverMap
-          center={WEDDING_LOCATION}
-          zoom={MAP_CONFIG.zoom}
-          width="100%"
-          height="230px"
-          markerInfo={WEDDING_VENUE_INFO}
-          showControls={MAP_CONFIG.showControls}
-        />
-      </div>
+      <FadeInChildren staggerDelay={100}>
+        <div className={styles.mapContainer}>
+          <NaverMap
+            center={WEDDING_LOCATION}
+            zoom={MAP_CONFIG.zoom}
+            width="100%"
+            height="230px"
+            markerInfo={WEDDING_VENUE_INFO}
+            showControls={MAP_CONFIG.showControls}
+          />
+        </div>
+      </FadeInChildren>
 
       {/* 교통 정보 섹션 */}
       <VerticalSpacer size={56} />
 
-      {/* 자차 */}
-      <div className={styles.transportSection}>
-        <div className={styles.transportHeader}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/ic_car.svg" alt="자차" width={18} height={18} />
-          <p className={styles.transportTitle}>자차</p>
-        </div>
-        <p className={styles.transportDesc}>{SELF_DRIVING_INFO.description}</p>
-      </div>
-
-      <div className={styles.divider} />
-
-      {/* 버스 */}
-      <div className={styles.transportSection}>
-        <div className={styles.transportHeader}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/ic_bus.svg" alt="버스" width={18} height={18} />
-          <p className={styles.transportTitle}>버스</p>
-        </div>
-        <p className={styles.transportSubtitle}>{BUS_INFO.stop}</p>
-        <div className={styles.busListContainer}>
-          {BUS_INFO.lines.map((line, index) => (
-            <div key={index} className={styles.busLineRow}>
-              <div
-                className={styles.busBadge}
-                style={{ backgroundColor: line.color }}
-              >
-                {line.label}
-              </div>
-              <p className={styles.busRoutes}>{line.routes}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.divider} />
-
-      {/* 지하철 */}
-      <div className={styles.transportSection}>
-        <div className={styles.transportHeader}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/ic_subway.svg" alt="지하철" width={18} height={18} />
-          <p className={styles.transportTitle}>지하철</p>
-        </div>
-        <div className={styles.subwayContainer}>
-          {/* 1호선 그룹 */}
-          <div className={styles.subwayGroup}>
-            <div className={styles.subwayBadgeRow}>
-              <div
-                className={styles.subwayBadge}
-                style={{ backgroundColor: SUBWAY_INFO.lines[0].color }}
-              >
-                {SUBWAY_INFO.lines[0].name}
-              </div>
-            </div>
-            <p className={styles.subwayExit}>{SUBWAY_INFO.lines[0].exit}</p>
+      <FadeInChildren staggerDelay={100}>
+        {/* 자차 */}
+        <div className={styles.transportSection}>
+          <div className={styles.transportHeader}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ic_car.svg" alt="자차" width={18} height={18} />
+            <p className={styles.transportTitle}>자차</p>
           </div>
+          <p className={styles.transportDesc}>{SELF_DRIVING_INFO.description}</p>
+        </div>
 
-          {/* 경의중앙, 수인분당, 경춘선 그룹 */}
-          <div className={styles.subwayGroup}>
-            <div className={styles.subwayBadgeRow}>
-              {SUBWAY_INFO.lines.slice(1).map((line, index) => (
+        <div className={styles.divider} />
+
+        {/* 버스 */}
+        <div className={styles.transportSection}>
+          <div className={styles.transportHeader}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ic_bus.svg" alt="버스" width={18} height={18} />
+            <p className={styles.transportTitle}>버스</p>
+          </div>
+          <p className={styles.transportSubtitle}>{BUS_INFO.stop}</p>
+          <div className={styles.busListContainer}>
+            {BUS_INFO.lines.map((line, index) => (
+              <div key={index} className={styles.busLineRow}>
                 <div
-                  key={index}
-                  className={styles.subwayBadge}
+                  className={styles.busBadge}
                   style={{ backgroundColor: line.color }}
                 >
-                  {line.name}
+                  {line.label}
                 </div>
-              ))}
-            </div>
-            <p className={styles.subwayExit}>{SUBWAY_INFO.lines[1].exit}</p>
+                <p className={styles.busRoutes}>{line.routes}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      <div className={styles.divider} />
+        <div className={styles.divider} />
 
-      {/* 주차 */}
-      <div className={styles.transportSection}>
-        <div className={styles.transportHeader}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/ic_parking.svg" alt="주차" width={18} height={18} />
-          <p className={styles.transportTitle}>주차</p>
+        {/* 지하철 */}
+        <div className={styles.transportSection}>
+          <div className={styles.transportHeader}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ic_subway.svg" alt="지하철" width={18} height={18} />
+            <p className={styles.transportTitle}>지하철</p>
+          </div>
+          <div className={styles.subwayContainer}>
+            {/* 1호선 그룹 */}
+            <div className={styles.subwayGroup}>
+              <div className={styles.subwayBadgeRow}>
+                <div
+                  className={styles.subwayBadge}
+                  style={{ backgroundColor: SUBWAY_INFO.lines[0].color }}
+                >
+                  {SUBWAY_INFO.lines[0].name}
+                </div>
+              </div>
+              <p className={styles.subwayExit}>{SUBWAY_INFO.lines[0].exit}</p>
+            </div>
+
+            {/* 경의중앙, 수인분당, 경춘선 그룹 */}
+            <div className={styles.subwayGroup}>
+              <div className={styles.subwayBadgeRow}>
+                {SUBWAY_INFO.lines.slice(1).map((line, index) => (
+                  <div
+                    key={index}
+                    className={styles.subwayBadge}
+                    style={{ backgroundColor: line.color }}
+                  >
+                    {line.name}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.subwayExit}>{SUBWAY_INFO.lines[1].exit}</p>
+            </div>
+          </div>
         </div>
-        <div className={styles.parkingDesc}>
-          {PARKING_INFO.description.map((line, index) => (
-            <p key={index} className={styles.parkingLine}>
-              {index === 0 ? (
-                <>
-                  <strong>지하 3층, 4층</strong>만 <strong>주차 가능</strong>
-                  합니다.
-                </>
-              ) : (
-                line
-              )}
-            </p>
-          ))}
+
+        <div className={styles.divider} />
+
+        {/* 주차 */}
+        <div className={styles.transportSection}>
+          <div className={styles.transportHeader}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ic_parking.svg" alt="주차" width={18} height={18} />
+            <p className={styles.transportTitle}>주차</p>
+          </div>
+          <div className={styles.parkingDesc}>
+            {PARKING_INFO.description.map((line, index) => (
+              <p key={index} className={styles.parkingLine}>
+                {index === 0 ? (
+                  <>
+                    <strong>지하 3층, 4층</strong>만 <strong>주차 가능</strong>
+                    합니다.
+                  </>
+                ) : (
+                  line
+                )}
+              </p>
+            ))}
+          </div>
         </div>
-      </div>
+      </FadeInChildren>
 
       <VerticalSpacer size={80} />
     </div>
