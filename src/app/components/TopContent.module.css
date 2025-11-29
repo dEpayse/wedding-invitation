@@ -2,6 +2,8 @@
   background-color: white;
   padding: 0 0 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .imageWrapper {
@@ -43,4 +45,155 @@
   font-weight: 300;
   line-height: 1.6;
   margin-bottom: 20px;
+}
+
+/* 꽃잎 효과 */
+.petalsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -20px;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  animation: fall linear infinite;
+  opacity: 1;
+  transform-style: preserve-3d;
+}
+
+/* 다양한 꽃잎 모양 */
+.petal:nth-child(5n) {
+  border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%; /* 꽃잎 모양 1 */
+}
+
+.petal:nth-child(5n+1) {
+  border-radius: 15% 80% 50% 55% / 80% 15% 50% 55%; /* 꽃잎 모양 2 */
+}
+
+.petal:nth-child(5n+2) {
+  border-radius: 50% 50% 0 50%; /* 하트형 꽃잎 */
+}
+
+.petal:nth-child(5n+3) {
+  border-radius: 50% 0 50% 50%; /* 물방울 꽃잎 */
+}
+
+.petal:nth-child(5n+4) {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* 타원형 꽃잎 */
+}
+
+.fall {
+  animation-name: fall !important;
+}
+
+.float {
+  animation-name: floatHorizontal !important;
+}
+
+@keyframes fall {
+  0% {
+    top: -20px;
+    transform: translateX(0)
+               rotateZ(var(--initial-rotation, 0deg))
+               rotateX(0deg)
+               rotateY(0deg);
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateX(calc(var(--direction, 1) * 15px))
+               rotateZ(calc(var(--initial-rotation, 0deg) + 90deg))
+               rotateX(calc(var(--direction, 1) * 30deg))
+               rotateY(calc(var(--direction, 1) * 20deg));
+  }
+  40% {
+    transform: translateX(calc(var(--direction, 1) * -10px))
+               rotateZ(calc(var(--initial-rotation, 0deg) + 180deg))
+               rotateX(calc(var(--direction, 1) * 60deg))
+               rotateY(calc(var(--direction, 1) * 40deg));
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(calc(var(--direction, 1) * 25px))
+               rotateZ(calc(var(--initial-rotation, 0deg) + 270deg))
+               rotateX(calc(var(--direction, 1) * 45deg))
+               rotateY(calc(var(--direction, 1) * 30deg));
+  }
+  80% {
+    opacity: 0.5;
+    transform: translateX(calc(var(--direction, 1) * -15px))
+               rotateZ(calc(var(--initial-rotation, 0deg) + 340deg))
+               rotateX(calc(var(--direction, 1) * 20deg))
+               rotateY(calc(var(--direction, 1) * 50deg));
+  }
+  100% {
+    top: 110%;
+    transform: translateX(calc(var(--direction, 1) * 10px))
+               rotateZ(calc(var(--initial-rotation, 0deg) + 360deg))
+               rotateX(0deg)
+               rotateY(0deg);
+    opacity: 0;
+  }
+}
+
+/* 수평으로 떠다니는 애니메이션 */
+@keyframes floatHorizontal {
+  0% {
+    top: 10%;
+    left: calc(var(--initial-left, 0%) - 10%);
+    transform: translateX(0)
+               translateY(0)
+               rotateZ(var(--initial-rotation, 0deg))
+               rotateX(0deg)
+               rotateY(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateX(calc(var(--direction, 1) * 40px))
+               translateY(-20px)
+               rotateZ(calc(var(--initial-rotation, 0deg) + 180deg))
+               rotateX(calc(var(--direction, 1) * -30deg))
+               rotateY(calc(var(--direction, 1) * 45deg));
+  }
+  50% {
+    top: 30%;
+    transform: translateX(calc(var(--direction, 1) * 80px))
+               translateY(10px)
+               rotateZ(calc(var(--initial-rotation, 0deg) + 360deg))
+               rotateX(calc(var(--direction, 1) * -60deg))
+               rotateY(calc(var(--direction, 1) * 30deg));
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateX(calc(var(--direction, 1) * 120px))
+               translateY(-10px)
+               rotateZ(calc(var(--initial-rotation, 0deg) + 540deg))
+               rotateX(calc(var(--direction, 1) * -45deg))
+               rotateY(calc(var(--direction, 1) * 60deg));
+  }
+  95% {
+    opacity: 0.6;
+  }
+  100% {
+    top: 50%;
+    left: calc(var(--initial-left, 0%) + calc(var(--direction, 1) * 50%));
+    transform: translateX(calc(var(--direction, 1) * 150px))
+               translateY(20px)
+               rotateZ(calc(var(--initial-rotation, 0deg) + 720deg))
+               rotateX(0deg)
+               rotateY(0deg);
+    opacity: 0;
+  }
 }
