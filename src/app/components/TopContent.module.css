@@ -267,7 +267,7 @@
   1% {
     opacity: 1;
   }
-  100% {
+  99%, 100% {
     stroke-dashoffset: 0;
     fill: white;
     stroke-width: 0;
