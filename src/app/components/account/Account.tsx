@@ -20,48 +20,30 @@ export default function Account() {
     alert("계좌번호가 복사되었습니다.");
   };
 
-  const openKakaoPay = (account: AccountInfo) => {
-    // 모바일 환경 체크
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (!isMobile) {
-      alert("카카오페이는 모바일에서만 사용 가능합니다.");
-      return;
-    }
-
-    // 계좌번호 복사 후 카카오톡 실행
+  const openKakaoPay = async (account: AccountInfo) => {
+    // 계좌번호 복사
     const cleanedAccountNumber = account.accountNumber.replace(/-/g, "");
-    navigator.clipboard.writeText(cleanedAccountNumber);
 
-    // 카카오톡 실행 (카카오페이 직접 연동은 공식 API가 필요함)
-    alert(`${account.bank} ${cleanedAccountNumber}\n계좌번호가 복사되었습니다.\n\n카카오톡에서 송금 > 계좌번호 입력을 이용해주세요.`);
+    try {
+      await navigator.clipboard.writeText(cleanedAccountNumber);
 
-    // 카카오톡 실행 시도
-    window.location.href = "kakaotalk://";
-  };
+      // 모바일 환경에서 카카오페이 앱 열기
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  const getBankCode = (bankName: string): string => {
-    const bankCodes: { [key: string]: string } = {
-      "카카오뱅크": "090",
-      "국민은행": "004",
-      "우체국": "071",
-      "농협": "011",
-      "신한은행": "088",
-      "우리은행": "020",
-      "하나은행": "081",
-      "IBK기업은행": "003",
-      "SC제일은행": "023",
-      "한국씨티은행": "027",
-      "경남은행": "039",
-      "광주은행": "034",
-      "대구은행": "031",
-      "부산은행": "032",
-      "전북은행": "037",
-      "제주은행": "035",
-      "케이뱅크": "089",
-      "토스뱅크": "092",
-    };
-    return bankCodes[bankName] || "";
+      if (isMobile) {
+        // 카카오페이 앱 실행 (송금 화면으로)
+        window.location.href = "kakaotalk://kakaopay/home";
+
+        // 앱 실행 실패 대비 알림
+        setTimeout(() => {
+          alert(`${account.bank} ${cleanedAccountNumber}\n계좌번호가 복사되었습니다.`);
+        }, 100);
+      } else {
+        alert(`${account.bank} ${cleanedAccountNumber}\n계좌번호가 복사되었습니다.\n\n모바일에서 카카오페이를 실행해주세요.`);
+      }
+    } catch {
+      alert("계좌번호 복사에 실패했습니다.");
+    }
   };
 
   const renderAccountCard = (account: AccountInfo) => {
