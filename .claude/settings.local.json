@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(powershell -Command \"Get-Content ''C:\\Users\\bs529\\.claude.json'' | Select-Object -Last 50\")",
+      "mcp__figma-remote-mcp__get_screenshot",
+      "mcp__figma-remote-mcp__get_design_context",
+      "Bash(npm run dev:*)",
+      "mcp__figma-remote-mcp__get_metadata",
+      "Bash(public/ic_heart.svg)",
+      "Bash(timeout:*)",
+      "Bash(rd /s /q .next 2)",
+      "Bash(nul)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

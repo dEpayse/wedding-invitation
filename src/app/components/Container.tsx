@@ -48,7 +48,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
       {React.Children.map(children, (child, index) => {
         // TopContent에만 onAnimationComplete prop 전달
         if (index === 0 && React.isValidElement(child)) {
-          return React.cloneElement(child as React.ReactElement<any>, {
+          return React.cloneElement(child as React.ReactElement<{ onAnimationComplete?: () => void }>, {
             onAnimationComplete: handleAnimationComplete,
           });
         }
