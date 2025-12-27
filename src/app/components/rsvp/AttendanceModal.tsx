@@ -93,7 +93,7 @@ export default function AttendanceModal({ onClose }: AttendanceModalProps) {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch('http://121.134.219.94/api/v1/guests', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/guests`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
