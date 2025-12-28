@@ -10,6 +10,7 @@ export default function Footer() {
                 alt="Footer"
                 className={styles.footerImage}
             />
+            <p className={styles.credit}>Made by dEpayse and Seungju</p>
         </div>
     );
 }

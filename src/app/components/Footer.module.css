@@ -4,10 +4,24 @@
   justify-content: center;
   align-items: center;
   background-color: white;
+  position: relative;
 }
 
 .footerImage {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.credit {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-family: var(--font-matsury);
+  font-size: 18px;
+  color: white;
+  margin: 0;
+  opacity: 0.8;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "clig" 0;
 }
