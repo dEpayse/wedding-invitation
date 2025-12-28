@@ -9,6 +9,7 @@ import Gallery from "@/app/components/gallery/Gallery";
 import Location from "@/app/components/location/Location";
 import Rsvp from "@/app/components/rsvp/Rsvp";
 import Account from "@/app/components/account/Account";
+import Information from "@/app/components/information/Information";
 import Footer from "@/app/components/Footer";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
           <Location />
           <Rsvp />
           <Account />
+          <Information />
           <Footer />
         </Container>
       </main>
