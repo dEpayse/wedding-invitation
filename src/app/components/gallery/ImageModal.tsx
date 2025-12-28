@@ -8,9 +8,10 @@ interface ImageModalProps {
     images: { src: string; alt: string }[];
     initialIndex: number;
     onClose: () => void;
+    showNavigation?: boolean; // 화살표와 페이지 인디케이터 표시 여부
 }
 
-export default function ImageModal({ images, initialIndex, onClose }: ImageModalProps) {
+export default function ImageModal({ images, initialIndex, onClose, showNavigation = true }: ImageModalProps) {
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
     const [touchStart, setTouchStart] = useState(0);
     const [touchEnd, setTouchEnd] = useState(0);
@@ -153,35 +154,41 @@ export default function ImageModal({ images, initialIndex, onClose }: ImageModal
                 </div>
 
                 {/* 좌측 화살표 */}
-                <button
-                    className={`${styles.navButton} ${styles.navButtonLeft}`}
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        goToPrevious();
-                    }}
-                >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                </button>
+                {showNavigation && (
+                    <button
+                        className={`${styles.navButton} ${styles.navButtonLeft}`}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            goToPrevious();
+                        }}
+                    >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </button>
+                )}
 
                 {/* 우측 화살표 */}
-                <button
-                    className={`${styles.navButton} ${styles.navButtonRight}`}
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        goToNext();
-                    }}
-                >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                </button>
+                {showNavigation && (
+                    <button
+                        className={`${styles.navButton} ${styles.navButtonRight}`}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            goToNext();
+                        }}
+                    >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </button>
+                )}
 
                 {/* 페이지 인디케이터 */}
-                <div className={styles.pageIndicator}>
-                    {currentIndex + 1} / {images.length}
-                </div>
+                {showNavigation && (
+                    <div className={styles.pageIndicator}>
+                        {currentIndex + 1} / {images.length}
+                    </div>
+                )}
             </div>
         </div>
     );

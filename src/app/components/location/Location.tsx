@@ -5,6 +5,7 @@ import VerticalSpacer from "@/app/components/common/VerticalSpacer";
 import React, { useState } from "react";
 import NaverMap from "@/app/components/map/NaverMap";
 import FadeInChildren from "../common/FadeInChildren";
+import ImageModal from "@/app/components/gallery/ImageModal";
 import {
   WEDDING_LOCATION,
   WEDDING_VENUE_INFO,
@@ -19,6 +20,8 @@ import {
 
 export default function Location() {
   const [copyMessage, setCopyMessage] = useState("");
+  const [showMapImage, setShowMapImage] = useState(false);
+  const [showMapModal, setShowMapModal] = useState(false);
 
   // 모바일 디바이스 체크
   const isMobile = () => {
@@ -115,6 +118,52 @@ export default function Location() {
             <p className={styles.transportTitle}>자차</p>
           </div>
           <p className={styles.transportDesc}>{SELF_DRIVING_INFO.description}</p>
+          <p className={styles.transportDesc}>{SELF_DRIVING_INFO.parkingEntrance}</p>
+
+          {/* 약도 토글 버튼 */}
+          <button
+            className={styles.mapToggleButton}
+            onClick={() => setShowMapImage(!showMapImage)}
+          >
+            {showMapImage ? '약도 닫기' : '약도 보기'}
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 12 12"
+              fill="none"
+              className={showMapImage ? styles.arrowUp : styles.arrowDown}
+            >
+              <path
+                d="M2 4L6 8L10 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+
+          {/* 약도 이미지 */}
+          {showMapImage && (
+            <div
+              className={styles.mapImageContainer}
+              onClick={() => setShowMapModal(true)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  setShowMapModal(true);
+                }
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/location_map.jpg"
+                alt="L65호텔웨딩컨벤션 약도"
+                className={styles.mapImage}
+              />
+            </div>
+          )}
         </div>
 
         <div className={styles.divider} />
@@ -200,6 +249,11 @@ export default function Location() {
                     <strong>지하 3층, 4층</strong>만 <strong>주차 가능</strong>
                     합니다.
                   </>
+                ) : index === 1 ? (
+                  <>
+                    <strong>지하 2층</strong>은 <strong>주차가 불가능</strong>
+                    합니다.
+                  </>
                 ) : (
                   line
                 )}
@@ -210,6 +264,16 @@ export default function Location() {
       </FadeInChildren>
 
       <VerticalSpacer size={80} />
+
+      {/* 약도 전체화면 모달 */}
+      {showMapModal && (
+        <ImageModal
+          images={[{ src: '/location_map.jpg', alt: 'L65호텔웨딩컨벤션 약도' }]}
+          initialIndex={0}
+          onClose={() => setShowMapModal(false)}
+          showNavigation={false}
+        />
+      )}
     </div>
   );
 }
