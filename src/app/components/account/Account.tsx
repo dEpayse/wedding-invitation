@@ -31,13 +31,13 @@ export default function Account() {
       const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
       if (isMobile) {
-        // 카카오페이 앱 실행 (송금 화면으로)
-        window.location.href = "kakaotalk://kakaopay/home";
+        // 안내 메시지 표시 후 확인 누르면 카카오페이로 이동
+        const confirmed = confirm(`${account.bank} ${cleanedAccountNumber}\n계좌번호가 복사되었습니다.\n\n확인을 누르면 카카오페이로 이동합니다.`);
 
-        // 앱 실행 실패 대비 알림
-        setTimeout(() => {
-          alert(`${account.bank} ${cleanedAccountNumber}\n계좌번호가 복사되었습니다.`);
-        }, 100);
+        if (confirmed) {
+          // 카카오페이 앱 실행 (송금 화면으로)
+          window.location.href = "kakaotalk://kakaopay/home";
+        }
       } else {
         alert(`${account.bank} ${cleanedAccountNumber}\n계좌번호가 복사되었습니다.\n\n모바일에서 카카오페이를 실행해주세요.`);
       }
