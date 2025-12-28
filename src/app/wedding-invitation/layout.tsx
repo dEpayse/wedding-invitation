@@ -41,6 +41,12 @@ const laPaloma = localFont({
   variable: "--font-la-paloma",
 });
 
+// Matsury 폰트
+const matsury = localFont({
+  src: "../../../public/fonts/matsury.ttf",
+  variable: "--font-matsury",
+});
+
 export const metadata: Metadata = {
   title: "범순과 승주의 모바일 청첩장",
   description: "범순과 승주의 결혼식에 여러분을 초대합니다.",
@@ -53,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${maruburi.variable} ${laPaloma.variable}`}>
+      <body className={`${maruburi.variable} ${laPaloma.variable} ${matsury.variable}`}>
         <Script
           src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=0qse53sk6j"
           strategy="beforeInteractive"

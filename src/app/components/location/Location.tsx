@@ -118,7 +118,7 @@ export default function Location() {
             <p className={styles.transportTitle}>자차</p>
           </div>
           <p className={styles.transportDesc}>{SELF_DRIVING_INFO.description}</p>
-          <p className={styles.transportDesc}>{SELF_DRIVING_INFO.parkingEntrance}</p>
+          <p className={styles.transportDesc}>{SELF_DRIVING_INFO.parkingNotice}</p>
 
           {/* 약도 토글 버튼 */}
           <button
@@ -253,6 +253,10 @@ export default function Location() {
                   <>
                     <strong>지하 2층</strong>은 <strong>주차가 불가능</strong>
                     합니다.
+                  </>
+                ) : index === 2 ? (
+                  <>
+                    <strong>연회장 입구 태블릿으로 차량 등록</strong>을 해주시면 <strong>1시간 30분 무료로</strong> 사용 가능하고, 이후는 주차 요금이 발생합니다.
                   </>
                 ) : (
                   line
