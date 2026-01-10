@@ -21,7 +21,7 @@ export default function Information() {
             <VerticalSpacer size={8} />
             <p className={styles.description}>
               뷔페식으로 식사가 준비되어 있습니다.<br />
-              이용 가능한 시간은 15:00 ~ 18:00 입니다.
+              이용 가능한 시간은 15:30 ~ 18:00 입니다.
             </p>
             <a
               href="http://www.l65hotelwedding.co.kr/banquet/menu/"
